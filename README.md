@@ -2,17 +2,19 @@
 a dev env for kibana plugins
 
 ## Prereqs
-docker
-docker-compose is optional.
+* docker
+* docker-compose is *optional*.
 
 ## Usage
 1. make a custom entry script such as saved as ./dev-entry.sh
 ```bash
 #!/bin/bash
+npm install
+npm run build
 npm start -- --elasticsearch.url "${ELASTICSEARCH_URL}" --no-ssl --server.host "${SERVER_NAME}"
 ```
 
-### docker-compose
+### if using docker-compose
 2. edit docker-compose.yml in your plugin folder.
 ```yaml
 version: '2'
@@ -32,8 +34,8 @@ services:
 ```
 3. docker-compose up
 
-### docker
-2. 
+### docker (not using docker-compose)
+2. run the container.
 ```bash
 docker run -d \
   --name kibana-plugin-dev \
@@ -44,4 +46,17 @@ docker run -d \
   -w /project/plugin_folder \
   -e "SERVER_NAME=0.0.0.0" \
   docker-remote.registry.kroger.com/danfrohlich/kibana-plugin-dev-env:v5.4.1
+```
+
+### to run tets cases...
+1. enter running container
+```bash
+docker exec -it kibana-plugin-dev bash
+```
+2. execute helper testing tasks
+```bash
+plugin-helpers test:server
+```
+```bash
+plugin-helpers test:browser
 ```
