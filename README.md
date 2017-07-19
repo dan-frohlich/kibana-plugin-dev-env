@@ -60,3 +60,5 @@ plugin-helpers test:server
 ```bash
 plugin-helpers test:browser
 ```
+
+### updated to kibana v5.5.0
