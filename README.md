@@ -61,4 +61,5 @@ plugin-helpers test:server
 plugin-helpers test:browser
 ```
 
-### updated to kibana v5.5.0
+### RELEASE NOTES
+- updated to kibana v5.5.1
