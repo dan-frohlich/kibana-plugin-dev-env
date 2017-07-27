@@ -62,4 +62,4 @@ plugin-helpers test:browser
 ```
 
 ### RELEASE NOTES
-- updated to kibana v5.4.3
+- updated to kibana v6.0.0-alpha1
