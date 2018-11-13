@@ -21,7 +21,7 @@ version: '2'
 services:
   kibana:
     container_name: kibana-plugin-dev
-    image: docker-remote.registry.kroger.com/danfrohlich/kibana-plugin-dev-env:v5.4.1
+    image: danfrohlich/kibana-plugin-dev-env:v6.4.3
     entrypoint: /project/plugin_folder/dev-entry.sh
     environment:
       ELASTICSEARCH_URL: http://[your-es-host-here]:9200
@@ -45,7 +45,7 @@ docker run -d \
   -e "ELASTICSEARCH_URL=http://[your-es-host-here]:9200" \
   -w /project/plugin_folder \
   -e "SERVER_NAME=0.0.0.0" \
-  docker-remote.registry.kroger.com/danfrohlich/kibana-plugin-dev-env:v5.4.1
+  danfrohlich/kibana-plugin-dev-env:v6.4.3
 ```
 
 ### to run tets cases...
@@ -62,4 +62,4 @@ plugin-helpers test:browser
 ```
 
 ### RELEASE NOTES
-- updated to kibana v5.5.1
+- updated to kibana v6.4.3
